@@ -358,6 +358,14 @@ let data = [
                 label: 'Manage &Engines…',
                 click: () => (sabaki.setState({preferencesTab: 'engines'}), sabaki.openDrawer('preferences'))
             },
+            {
+                label: 'A&nalysis Mode',
+                checked: 'engines.analysis_mode',
+                click: () => {
+                    sabaki.setAnalysisMode(!setting.get('engines.analysis_mode'))
+                    toggleSetting('engines.analysis_mode')
+                }
+            },
             {type: 'separator'},
             {
                 label: '&Attach…',

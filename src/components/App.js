@@ -88,6 +88,7 @@ class App extends Component {
             // Engines
 
             engines: null,
+            analysisMode: setting.get('engines.analysis_mode'),
             attachedEngines: [null, null],
             engineCommands: [[], []],
             generatingMoves: false,
@@ -1996,6 +1997,10 @@ class App extends Component {
     }
 
     // GTP Engines
+
+    setAnalysisMode(analysisMode) {
+        this.setState({analysisMode})
+    }
 
     attachEngines(...engines) {
         let {dirname, resolve} = require('path')
